@@ -6,10 +6,7 @@ import logging
 
 import vim
 import sys
-sys.path.append(".")
-
-from . import util
-ModuleImporter = util.ModuleImporter
+from .util import ModuleImporter
 
 logger = logging.getLogger(__name__)
 

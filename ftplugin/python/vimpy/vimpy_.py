@@ -133,6 +133,9 @@ def _resolve_relative(pos_import, pos_modules):
             except AttributeError:
                 # cur module is user module not in pythonpath, skip.
                 pass
+            except TypeError:
+                pass
+
 
     if candidates:
 
