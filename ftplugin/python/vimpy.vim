@@ -20,7 +20,7 @@ let s:vimpy_debug_log = 1
 
 " Make sure we have pyflakes
 let s:have_flake = 1
-python << EOF
+py3 << EOF
 try:
     import pyflakes
 except ImportError:
@@ -32,7 +32,7 @@ if !s:have_flake
 endif
 
 " Expand our path
-python << EOF
+py3 << EOF
 import vim, os, sys
 new_path = vim.eval('expand("<sfile>:h")')
 sys.path.append(new_path)
@@ -43,7 +43,7 @@ if bool(int(vim.eval('s:vimpy_debug_log'))):
 EOF
 
 function! s:DovimpyCheckLine()
-    exe 'py vimpy_.do_vimpy(' . line(".") . ')'
+    exe 'py3 vimpy_.do_vimpy(' . line(".") . ')'
 endfunction
 
 command! -bar VimpyCheckLine call s:DovimpyCheckLine()

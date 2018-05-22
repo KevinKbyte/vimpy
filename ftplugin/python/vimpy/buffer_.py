@@ -5,8 +5,11 @@ import re
 import logging
 
 import vim
+import sys
+sys.path.append(".")
 
-from util import ModuleImporter
+from . import util
+ModuleImporter = util.ModuleImporter
 
 logger = logging.getLogger(__name__)
 
